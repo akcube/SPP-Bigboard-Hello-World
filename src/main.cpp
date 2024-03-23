@@ -25,8 +25,8 @@ struct chash {
 
 namespace akcube {
 	// using hash_table = __gnu_pbds::cc_hash_table<std::string, int, chash>;
-	// using hash_table = __gnu_pbds::gp_hash_table<std::string, int, chash>;
-	using hash_table = std::unordered_map<std::string, int, chash>;
+	using hash_table = __gnu_pbds::gp_hash_table<std::string, int, chash>;
+	// using hash_table = std::unordered_map<std::string, int, chash>;
 	const std::string compute(const std::string &dict_path, const std::string &text_path){
 		std::ifstream dict_fs(dict_path), text_fs(text_path);
 		const std::string sol_path = std::filesystem::temp_directory_path() / "student_sol.txt";
